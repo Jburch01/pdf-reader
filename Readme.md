@@ -23,7 +23,7 @@
     from the PDF files, performs necessary manipulations, and saves the resulting data in Excel format for easy analysis
     and further processing.
   </p>
-   <img src="https://github.com/Jburch01/pdf-reader/blob/main/pdfr_screenshot.png" height="100" width="100"/></>
+   <img src="https://github.com/Jburch01/pdf-reader/blob/main/pdfr_screenshot.png" height="300" width="300"/></>
 
   <h2>Prerequisites</h2>
   <ul>
