@@ -70,6 +70,8 @@
     <li>The PDF Reader application assumes a specific structure and formatting of the PDF files. Always validate the
       processed data for accuracy and review the results according to your specific requirements.</li>
     <li>Use the application at your own discretion, and exercise caution when handling sensitive or critical data.</li>
+    <li>App was primarily developed on macOS, so it may require adjusting certain sizes or layouts when running on Windows systems.
+</li>
   </ul>
 
   <p>Feel free to modify the script according to your needs or contribute to its development. Simplify your PDF data
