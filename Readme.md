@@ -27,7 +27,7 @@
     <li>Python 3.x</li>
     <li>tkinter</li>
     <li>pandas</li>
-    <li>numpy</li>
+    <li>re</li>
     <li>tabula-py</li>
     <li>glob</li>
   </ul>
