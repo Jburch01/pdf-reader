@@ -9,9 +9,7 @@
 
   <h2>Problem</h2>
   <p>
-    A friend of mine was describing a problem that his boss was having. It took him hours to take digital PDF files
-    and input key pieces of data manually into Excel. So he asked me if it was possible to take the PDF files and use
-    Python to automate that task. This was my response.
+    A friend of mine described a tedious task his boss was facing. It involved manually extracting key data from digital PDF files and inputting it into Excel. This process consumed several hours and was prone to errors. Seeking a solution, my friend approached me with the question of whether Python could automate this task. Inspired by his inquiry, I developed the PDF Reader application to alleviate this time-consuming and error-prone process.
   </p>
 
   <h2>Description</h2>
