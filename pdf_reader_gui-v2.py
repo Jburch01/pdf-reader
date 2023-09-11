@@ -92,46 +92,88 @@ def main_screen():
         
     
     def get_input_directory():
-       ''' displays os window for user to select input folder'''
+           '''
+        Displays the operating system's folder selection window for the user to choose the input folder.
+
+        This function opens the OS-native folder selection window to allow the user to select the input folder
+        containing the PDF files to be processed. It also removes any previous error messages, if any.
+        The selected directory path is then displayed in the input_entry field.
+
+        Global Variables:
+        - input_directory: The directory containing input PDF files.
+        - input_entry: The entry field for displaying the selected input directory.
+
+        Returns:
+        None
+        '''
         global input_directory
         remove_error()
         input_directory = askdirectory()
         input_entry.config(bg='lightgray', fg='black', text=input_directory)
     
-    def remove_error():
-        '''removes the warning label''' 
-         warning_label.config(bg='lightgray', text='')
+       def remove_error():
+        '''
+        Removes the warning label from the user interface.
+
+        This function clears the warning_label, removing any error message that might be displayed
+        to the user.
+
+        Global Variables:
+        - warning_label: The label used for displaying warning messages in the user interface.
+
+        Returns:
+        None
+        '''
+        warning_label.config(bg='lightgray', text='')
+
             
             
     def run_button():
-        '''checks to make sure that input/output folders have been selected and then runs.''' 
-        global window
-        if input_directory == '' or output_directory == "":
-            warning_label.config(bg='lightgray', font=('Impact', 20), fg='darkred', text="ERROR\nYou must select input/output folders before clicking run")      
-        else:    
-            read_pdfs()
+    '''
+    Checks if input and output folders are selected, then initiates the PDF processing.
+
+    This function is called when the "Run" button is clicked. It first checks if both the input
+    and output folders are specified. If either of them is empty, it displays an error message
+    using the warning_label. If both directories are specified, it calls the read_pdfs() function
+    to process PDF files.
+
+    Global Variables:
+    - window: The main application window.
+    - warning_label: A label for displaying warning messages.
+    - input_directory: The directory containing input PDF files.
+    - output_directory: The directory where processed data will be saved.
+
+    Returns:
+    None
+    '''
+    global window
+    if input_directory == '' or output_directory == "":
+        warning_label.config(bg='lightgray', font=('Impact', 20), fg='darkred', text="ERROR\nYou must select input/output folders before clicking run")      
+    else:    
+        read_pdfs()
+
         
         
     def read_pdfs():
         '''  
         Read and process PDF files from the input directory, extracting invoice data.
 
-    This function reads PDF files from the specified input directory, processes them using tabula-py
-    to extract invoice data, and saves the extracted data into Excel files in the output directory.
+        This function reads PDF files from the specified input directory, processes them using tabula-py
+        to extract invoice data, and saves the extracted data into Excel files in the output directory.
 
-    If no PDF files are found in the input directory, it displays a warning message.
-    Once the processing is complete, it updates the status to "DONE."
+        If no PDF files are found in the input directory, it displays a warning message.
+        Once the processing is complete, it updates the status to "DONE."
 
-    Global Variables:
-    - input_directory: The directory containing input PDF files.
-    - output_directory: The directory where processed data will be saved.
-    - warning_label: A label for displaying warning messages.
-    - run_button: The button for triggering the PDF processing.
-    - running_label: A label for displaying the processing status.
+        Global Variables:
+        - input_directory: The directory containing input PDF files.
+        - output_directory: The directory where processed data will be saved.
+        - warning_label: A label for displaying warning messages.
+        - run_button: The button for triggering the PDF processing.
+        - running_label: A label for displaying the processing status.
 
-    Returns:
-    None
-    '''
+        Returns:
+        None
+        '''
         global input_directory
         global output_directory
         invoice_reg = r'\d+[^ ]*'
